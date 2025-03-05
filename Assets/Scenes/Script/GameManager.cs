@@ -42,6 +42,15 @@ public class GameManager : MonoBehaviour
     public Text triviaText;         // Assign Trivia Text
     public Button closeTriviaButton; // Assign Close Button
 
+    public GameObject hintPanel;  // Panel for hint confirmation
+    public Button confirmHintButton; // Yes Button
+    public Button cancelHintButton; // No Button
+    public Text hintText; // Text on panel
+
+    public GameObject noHintPanel; // Panel to show insufficient points message
+    public Text noHintText; // Text inside the panel
+    public Button noHintOkButton; // OK button
+
 
     // Dictionary to track which button corresponds to which input field
     private Dictionary<InputField, Button> inputFieldButtonMap = new Dictionary<InputField, Button>();
@@ -73,6 +82,13 @@ public class GameManager : MonoBehaviour
         closeTriviaButton.onClick.AddListener(CloseTrivia);
         triviaModal.SetActive(false); // Hide initially
 
+        // Existing initialization
+        confirmHintButton.onClick.AddListener(ConfirmHintPurchase);
+        cancelHintButton.onClick.AddListener(CloseHintPanel);
+        hintPanel.SetActive(false); // Hide hint panel initially
+
+        noHintPanel.SetActive(false); // Hide the panel initially
+        noHintOkButton.onClick.AddListener(CloseNoHintPanel);
         ResetGame();  // Start the first round
     }
 
@@ -90,6 +106,120 @@ public class GameManager : MonoBehaviour
             SetQuestionImages();
             SetupAnswerSlots();
             InstantiateLetterButtons();
+        }
+    }
+    private HashSet<InputField> lockedHintFields = new HashSet<InputField>(); // Stores locked input fields
+
+    private void ConfirmHintPurchase()
+    {
+        if (score >= 10) // Ensure player has enough points before applying the hint
+        {
+            hintPanel.SetActive(false);
+            ApplyHint();
+        }
+        else
+        {
+            Debug.Log("Not enough points to confirm hint!");
+            hintPanel.SetActive(false);
+        }
+    }
+
+    private void CloseHintPanel()
+    {
+        hintPanel.SetActive(false);
+    }
+    private void ApplyHint()
+    {
+        string correctAnswer = currentQuestion.correctWord.Replace(" ", "").ToUpper();
+        char[] correctChars = correctAnswer.ToCharArray();
+
+        List<InputField> allSlots = new List<InputField>();
+        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
+        {
+            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
+            {
+                allSlots.Add(inputField);
+            }
+        }
+
+        for (int i = 0; i < allSlots.Count; i++)
+        {
+            if (string.IsNullOrEmpty(allSlots[i].text))
+            {
+                char correctLetter = correctChars[i];
+                allSlots[i].text = correctLetter.ToString();
+                allSlots[i].interactable = false; // Disable input
+
+                lockedHintFields.Add(allSlots[i]); // Mark this field as locked
+
+                foreach (Button button in letterButtonContainer.GetComponentsInChildren<Button>())
+                {
+                    if (button.GetComponentInChildren<Text>().text == correctLetter.ToString() && button.interactable)
+                    {
+                        button.interactable = false;
+                        break;
+                    }
+                }
+
+                UpdateScore(-10);
+                return;
+            }
+        }
+    }
+
+    private void CloseNoHintPanel()
+    {
+        noHintPanel.SetActive(false);
+    }
+
+    public void UseHint()
+    {
+        if (score < 10)
+        {
+            Debug.Log("Not enough points to use a hint!");
+            noHintText.text = "Not enough points to use a hint!";
+            noHintPanel.SetActive(true); // Show the warning panel
+            return;
+        }
+        hintPanel.SetActive(true);
+        hintText.text = "Use 10 points to reveal a letter?";
+
+        string correctAnswer = currentQuestion.correctWord.Replace(" ", "").ToUpper();
+        char[] correctChars = correctAnswer.ToCharArray();
+
+        List<InputField> allSlots = new List<InputField>();
+        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
+        {
+            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
+            {
+                allSlots.Add(inputField);
+            }
+        }
+
+        for (int i = 0; i < allSlots.Count; i++)
+        {
+            if (string.IsNullOrEmpty(allSlots[i].text))
+            {
+                char correctLetter = correctChars[i];
+                allSlots[i].text = correctLetter.ToString();
+                allSlots[i].interactable = false; // Disable input
+
+                lockedHintFields.Add(allSlots[i]); // Mark this field as locked
+
+                foreach (Button button in letterButtonContainer.GetComponentsInChildren<Button>())
+                {
+                    if (button.GetComponentInChildren<Text>().text == correctLetter.ToString() && button.interactable)
+                    {
+                        button.interactable = false;
+                        break;
+                    }
+                }
+
+                // Deduct score for using a hint
+                UpdateScore(-10);
+
+                return;
+            }
         }
     }
 
@@ -164,9 +294,13 @@ private void SetupSlotsForWord(string word, Transform container)
     // Function to clear the input field when clicked
     private void ClearInputField(InputField inputField)
     {
+        if (lockedHintFields.Contains(inputField))
+        {
+            return; // Don't allow clearing if this field was filled by a hint
+        }
+
         inputField.text = "";
 
-        // Re-enable the corresponding button if it exists
         if (inputFieldButtonMap.ContainsKey(inputField))
         {
             Button associatedButton = inputFieldButtonMap[inputField];
@@ -175,9 +309,10 @@ private void SetupSlotsForWord(string word, Transform container)
                 associatedButton.interactable = true;
             }
 
-            inputFieldButtonMap.Remove(inputField); // Remove reference after restoring
+            inputFieldButtonMap.Remove(inputField);
         }
     }
+
 
 
 

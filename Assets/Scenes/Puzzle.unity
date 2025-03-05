@@ -289,6 +289,139 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+--- !u!1 &62525315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62525316}
+  - component: {fileID: 62525319}
+  - component: {fileID: 62525318}
+  - component: {fileID: 62525317}
+  m_Layer: 5
+  m_Name: HintButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &62525316
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62525315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.035512, y: 6.1798134, z: 1.297}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2146315100}
+  m_Father: {fileID: 636856705}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -105, y: -1844}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &62525317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62525315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 62525318}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 470792574}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: UseHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &62525318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62525315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5c0fe4af2c67a6549a9e72aa811daaff, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &62525319
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62525315}
+  m_CullTransparentMesh: 1
 --- !u!1 &223593047
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,125 +825,196 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 872a60a4a35860949b79d069988cd682, type: 3}
     - {fileID: 21300000, guid: 3ad40e23242137842994798d2d111d2d, type: 3}
     correctWord: CAVITE STATE UNIVERSITY
+    hint: 
+    trivia: 'The Cavite State University (CvSU) has its humble beginnings in 1906
+      as the Indang Intermediate School with the American Thomasites as the first
+      teachers. Several transformations in the name of the school took place: Indang
+      Farm School in 1918,  Indang Rural High School in 1927,  Don Severino National
+      Agriculture School in 1958. In 1964, the school was converted into a State
+      College by virtue of the Republic Act 3917 and became known as Don Severino
+      Agricultural College (DSAC). '
   - images:
     - {fileID: 21300000, guid: 7633e1619ded90644a4e3b4ed12696ac, type: 3}
     - {fileID: 21300000, guid: aa60439ffd747864ea38bc533cca4d56, type: 3}
     - {fileID: 21300000, guid: 5135c20854130414e83b0e2d80968d9a, type: 3}
     - {fileID: 21300000, guid: 03fd81370bfbf5e4e938aa26568ad31b, type: 3}
     correctWord: Palsahingin Falls
+    hint: 
+    trivia: the 90-foot-high Palsahingin Falls is known for its circular pit that
+      serves as a source of water
   - images:
     - {fileID: 21300000, guid: 9ce270fbfdf02a64da672c9b4118b0da, type: 3}
     - {fileID: 21300000, guid: 39d7ee008ccc8b745ab346b7650d4d91, type: 3}
     - {fileID: 21300000, guid: 292dd4bb539f1a34e80a9560e62dcece, type: 3}
     - {fileID: 21300000, guid: a28fd6cc01991fe4b8248a7cc6f72e4c, type: 3}
     correctWord: Bonifacio Shrine
+    hint: 
+    trivia: 'Bonifacio Shrine marks the location of nipa hut where Andres Bonifacio
+      was seized and captured by the soldiers of his political rival and fellow revolutionary
+      Emilio Aguinald0 in 1897. '
   - images:
     - {fileID: 21300000, guid: 8a51e307f12b6b24f9ad81731ff1d579, type: 3}
     - {fileID: 21300000, guid: 7c204e702d04b5846894542d5108a9cf, type: 3}
     - {fileID: 21300000, guid: c2ff60a063402774a8e2e9a828cca514, type: 3}
     - {fileID: 21300000, guid: b2560dfb38fc17449973f96546c32545, type: 3}
     correctWord: Great Parish Church
+    hint: 
+    trivia: 'the church was established as a mission station of Angelo Armano in
+      1611 '
   - images:
     - {fileID: 21300000, guid: ba8b4b0b2bbdc53439f643d57a72e74d, type: 3}
     - {fileID: 21300000, guid: 857b5767b04325a488398e20d247484c, type: 3}
     - {fileID: 21300000, guid: 9d55204fd0d1ce4429465b09e0f3feb8, type: 3}
     - {fileID: 21300000, guid: 01ff5da9d05d8284cb8da31199998059, type: 3}
     correctWord: San Vicente Ferrer
+    hint: 
+    trivia: 'the second parish church of Indang  September 08, 1851, it became a
+      pastoral center  March 9, 1998, it became Quasi parish  April 5, 2011, it finally
+      became a parish church  '
   - images:
     - {fileID: 21300000, guid: e8eddb03d1f9a424a86c04ad152ba025, type: 3}
     - {fileID: 21300000, guid: f692e0afcb6bc6d40ab155acd5dfab22, type: 3}
     - {fileID: 21300000, guid: 6e69fb85d8182f841a66cc8edbffcd02, type: 3}
     - {fileID: 21300000, guid: 82ba47e340a30b84cbd2342a683c7079, type: 3}
     correctWord: Balustre Cerca
+    hint: 
+    trivia: Nestled in the serene part of Indang, Cavite, just minutes from Tagaytay,
+      Balustre Cerca is an exclusive and private farm resort owned by Susan Enriquez.
   - images:
     - {fileID: 21300000, guid: 49f89842bb9d02648ab9192eeba6d024, type: 3}
     - {fileID: 21300000, guid: 916f0cbce61ab114d84dd933260419da, type: 3}
     - {fileID: 21300000, guid: 287bb213aeaa0424584e0109c6cff6c4, type: 3}
     - {fileID: 21300000, guid: 42bb610e9cde2fb4ead0ba949191e4d2, type: 3}
     correctWord: Lihim Ng Kubli
+    hint: 
+    trivia: is a serene escape that offers a beautiful natural setting for relaxation
+      and contemplation..
   - images:
     - {fileID: 21300000, guid: b2e949e886c43f64482bff34592930ff, type: 3}
     - {fileID: 21300000, guid: 644cd937b540b29419ea71e5f0bbe204, type: 3}
     - {fileID: 21300000, guid: f23afd55c6570a4459aa47dc5e4122f4, type: 3}
     - {fileID: 21300000, guid: 92caed2da4a60284ca7f2823f6572291, type: 3}
     correctWord: Pio De Roda
+    hint: 
+    trivia: 'Mrs. Dolores Pio de Roda Gonzales founded Pio de Roda Restaurant and
+      Catering Sevices in the 1980s. Located in the heart of Indang, Cavite, the
+      restaurant became famous in serving delectable and heirloom Filipino dishes. '
   - images:
     - {fileID: 21300000, guid: 9cd56665823859d4e97ee4424eee6f2b, type: 3}
     - {fileID: 21300000, guid: cd2046be05fedfe4ca54279c490fe175, type: 3}
     - {fileID: 21300000, guid: 4af8ca9f22a2c1a42b2da844e2a90054, type: 3}
     - {fileID: 21300000, guid: 5355d32247af9cd4e9521474cf92ec16, type: 3}
     correctWord: Canopy Farm Ph
+    hint: 
+    trivia: This 2 story tiny house sits on top of a forest creek. It has 2 bedrooms,
+      2 bathrooms that can comfortably sleep 6 people, and can accommodate a maximum
+      of 8
   - images:
     - {fileID: 21300000, guid: 3c138ab40973b5b4899ec971045c2ce4, type: 3}
     - {fileID: 21300000, guid: 7f8062021769adc42a9d62411e8f1ce3, type: 3}
     - {fileID: 21300000, guid: 8e64e8c7bff3bde4e8940feb00dcb609, type: 3}
     - {fileID: 21300000, guid: 86c5050dd650b76459dfc8fbb741438a, type: 3}
     correctWord: Hacienda Isabella
+    hint: 
+    trivia: Dream weddings, power team buildings, intimate parties, fabulous events
+      and enchanting moments
   - images:
     - {fileID: 21300000, guid: f6c53daa32fe33a409a03ab9362b18fa, type: 3}
     - {fileID: 21300000, guid: 1a4586e1ee4496848b3f7780d46ea3ad, type: 3}
     - {fileID: 21300000, guid: 2383e94f67641ac439bfc3fa5b512ee4, type: 3}
     - {fileID: 21300000, guid: a5be94a751e27df46aee896f78db2b10, type: 3}
     correctWord: Hamani Private Resort
+    hint: 
+    trivia: 
   - images:
     - {fileID: 21300000, guid: ef58dd72aaddfed41aa01975bd07d08d, type: 3}
     - {fileID: 21300000, guid: b90fc7108c17d9044a28fee2e4037a4b, type: 3}
     - {fileID: 21300000, guid: a627b51cbe3cb6c43ac0695b309dad2d, type: 3}
     - {fileID: 21300000, guid: efadea3fd68e5884782b769500e7db02, type: 3}
     correctWord: Zoilas Private Resort
+    hint: 
+    trivia: 
   - images:
     - {fileID: 21300000, guid: 328bcce74a96e47419b6d2ed7d17700f, type: 3}
     - {fileID: 21300000, guid: 91dfef2e97d504b4484f49e9235c9c3f, type: 3}
     - {fileID: 21300000, guid: c513c5310b0a7c941aca73da7e189916, type: 3}
     - {fileID: 21300000, guid: 0c0827262a820bf4bbe55158da62651e, type: 3}
     correctWord: Siglo Paraiso Farm
+    hint: 
+    trivia: 
   - images:
     - {fileID: 21300000, guid: 0f676a72fe177a041bae76d6613799ce, type: 3}
     - {fileID: 21300000, guid: 2340b0adcc4e14549bbbef85066fbde0, type: 3}
     - {fileID: 21300000, guid: c6108449a7c321a4b97c48f5c890f1e4, type: 3}
     - {fileID: 21300000, guid: d66a2d81c055d7247984af01f6da73dc, type: 3}
     correctWord: Sanctuario Nature Farm
+    hint: 
+    trivia: Sanctuario Natuer Farm is a farm of philanthropist. calming, and relaxing.
+      You can pick and buy with there wide vast of crops.
   - images:
     - {fileID: 21300000, guid: 3f5d7844c5d1720478e71b3e4139868e, type: 3}
     - {fileID: 21300000, guid: 613257443d8745847ba65f743ff75188, type: 3}
     - {fileID: 21300000, guid: 08aef06041fc78640a505045accc972c, type: 3}
     - {fileID: 21300000, guid: cf1c0a58217ed604e913b20f65fdc05d, type: 3}
     correctWord: Loufil Orchard Resort
+    hint: 
+    trivia: Known for its stunning pool and spacious lodgings, this resort is perfect
+      for those who want to mix relaxation with a bit of thrill.
   - images:
     - {fileID: 21300000, guid: f60146d5792e9d14e86e6cff5bac0cfe, type: 3}
     - {fileID: 21300000, guid: 436473c776a18414883242d01df6ea3d, type: 3}
     - {fileID: 21300000, guid: b91987f55a6ee744a8d30bcf10dd6ab5, type: 3}
     - {fileID: 21300000, guid: 10301ad82471bdf44b85b64bcffe6eb9, type: 3}
     correctWord: Emv Flower Farm
+    hint: 
+    trivia: A flower farm established since 2013 with 3.5 hectares of gorgeous blooms
+      including more than 15 types of chrysanthemums.
   - images:
     - {fileID: 21300000, guid: bc3edadc362266e4abd4b72b7bb47f32, type: 3}
     - {fileID: 21300000, guid: 4ff6d5607d256b04b860f2be2e72e76f, type: 3}
     - {fileID: 21300000, guid: 3fff1ef83ba3f7a42968ba2da90b56d1, type: 3}
     - {fileID: 21300000, guid: 9f024f1bccc17c64991ddf03d6a41313, type: 3}
     correctWord: Soiree
+    hint: 
+    trivia: "Soir\xE9e is a 1.3-hectare farmland that was developed into a magnificent
+      resort and events venue. Inspired by western designs "
   - images:
     - {fileID: 21300000, guid: b27a63243b9890a449fc6b5c4336fa01, type: 3}
     - {fileID: 21300000, guid: 46c8890aaf16a3a4abe4f88cab9ce1bd, type: 3}
     - {fileID: 21300000, guid: b1452e9f623ec5045a4fe7de54249a8d, type: 3}
     - {fileID: 21300000, guid: 0889f07102104c04c8f60cd30233f2bb, type: 3}
     correctWord: Precious Garden
+    hint: 
+    trivia: 'When staying at a hotel, the design and architecture are two important
+      factors that can spoil your eyes. '
   - images:
     - {fileID: 21300000, guid: e1ed8e5efad638e4081b6571a222a356, type: 3}
     - {fileID: 21300000, guid: 811ceb1086b3e9f4281b75485d544bea, type: 3}
     - {fileID: 21300000, guid: 4171b628bdd08904898cb3f701a6066f, type: 3}
     - {fileID: 21300000, guid: 6c487503d8a28414a906e69abb3c969e, type: 3}
     correctWord: Bounty Harvest Farm
+    hint: 
+    trivia: A farm in the upland Cavite growing fruit trees and vegetables and into
+      post-harvest processing. A Learning Site for Agriculture accredited by DA ATI-CALABARZON
+      and Farm Tourism Site by DOT-CALABARZON.
   - images:
     - {fileID: 21300000, guid: 92b16afd82d2f774aa91ac41076de37d, type: 3}
     - {fileID: 21300000, guid: dd4d7d5d5169fed488d0623ae022b763, type: 3}
     - {fileID: 21300000, guid: 974bbdecf01436d4ea395b9b6297f0c5, type: 3}
     - {fileID: 21300000, guid: 7d58faad9bc12324e86f75585e8f2175, type: 3}
     correctWord: La Ulrich Landfarm
+    hint: 
+    trivia: 'La Ulrich Land Farm Resort offers a well-maintained furnished house
+      where you can have good times with your friends, family, and many more.    
+      Location: Barangay Agus-os '
   inputFieldPrefab: {fileID: 2779151109824016138, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
   submitButton: {fileID: 1472883353}
   correctAnswerClip: {fileID: 8300000, guid: 72e6c17dfe701d040bb33f9c318faa9e, type: 3}
   wrongAnswerClip: {fileID: 8300000, guid: a39e5bf5d4022dd4b90b6756333e197a, type: 3}
   buttonClickClip: {fileID: 8300000, guid: 11be40e94556fdd428668d3ba49a401a, type: 3}
+  triviaModal: {fileID: 603093278}
+  triviaText: {fileID: 1765070945}
+  closeTriviaButton: {fileID: 2092521890}
 --- !u!4 &470792575
 Transform:
   m_ObjectHideFlags: 0
@@ -922,6 +1126,83 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &603093278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603093279}
+  - component: {fileID: 603093281}
+  - component: {fileID: 603093280}
+  m_Layer: 5
+  m_Name: Trivia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &603093279
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603093278}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.79562235, y: 0.5864038, z: 1.396}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1765070943}
+  - {fileID: 2092521893}
+  m_Father: {fileID: 636856705}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 1423, y: 4547}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: -3, y: -2.18}
+--- !u!114 &603093280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603093278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6471f9f8e3fc99d4181e743fb6994742, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &603093281
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603093278}
+  m_CullTransparentMesh: 1
 --- !u!1 &636856701
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1280,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1018,6 +1299,8 @@ RectTransform:
   m_Children:
   - {fileID: 861352888}
   - {fileID: 410656004}
+  - {fileID: 603093279}
+  - {fileID: 62525316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2158,7 +2441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.17637502, y: 0.027}
   m_AnchorMax: {x: 0.421375, y: 0.061335213}
-  m_AnchoredPosition: {x: 3, y: 11}
+  m_AnchoredPosition: {x: -290, y: 11}
   m_SizeDelta: {x: 41.3578, y: 46.0606}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1335594626
@@ -2527,7 +2810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.574375, y: 0.031261366}
   m_AnchorMax: {x: 0.8404376, y: 0.061335213}
-  m_AnchoredPosition: {x: 0, y: -7}
+  m_AnchoredPosition: {x: 46, y: -12}
   m_SizeDelta: {x: -19.503601, y: 64.061005}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &1502664065
@@ -2745,6 +3028,168 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627762852}
+  m_CullTransparentMesh: 1
+--- !u!1 &1765070942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765070943}
+  - component: {fileID: 1765070944}
+  - component: {fileID: 1765070945}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1765070943
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765070942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 7.25039, y: 11.508921, z: 11.508921}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 603093279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 17.593262, y: -668}
+  m_SizeDelta: {x: 192.5415, y: 400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1765070944
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765070942}
+  m_CullTransparentMesh: 1
+--- !u!114 &1765070945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765070942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: efa71b11a9fccb9458dba194b8bf2c5a, type: 3}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: '
+
+'
+--- !u!1 &1783054378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783054379}
+  - component: {fileID: 1783054381}
+  - component: {fileID: 1783054380}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1783054379
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783054378}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2092521893}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.00012207031, y: -0.00019836426}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 3.16, y: 2.71}
+--- !u!114 &1783054380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783054378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'X
+
+'
+--- !u!222 &1783054381
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783054378}
   m_CullTransparentMesh: 1
 --- !u!1 &1784075006
 GameObject:
@@ -3123,6 +3568,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036151530}
   m_CullTransparentMesh: 1
+--- !u!1 &2092521889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092521893}
+  - component: {fileID: 2092521892}
+  - component: {fileID: 2092521891}
+  - component: {fileID: 2092521890}
+  m_Layer: 5
+  m_Name: Close
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2092521890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092521889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2092521891}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2092521891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092521889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c93a3920725e67644a0ebe89e6f4f906, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2092521892
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092521889}
+  m_CullTransparentMesh: 1
+--- !u!224 &2092521893
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092521889}
+  m_LocalRotation: {x: -0, y: -0, z: 0.010396526, w: 0.999946}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1011336, y: 14.507337, z: 2.2644978}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1783054379}
+  m_Father: {fileID: 603093279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.191}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1079, y: 2436.2}
+  m_SizeDelta: {x: 156.17, y: 30}
+  m_Pivot: {x: 1.5, y: 1.77}
 --- !u!1 &2137978323
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,6 +3768,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137978323}
   m_CullTransparentMesh: 1
+--- !u!1 &2146315099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146315100}
+  - component: {fileID: 2146315102}
+  - component: {fileID: 2146315101}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2146315100
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146315099}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.7163274, y: 0.9321079, z: 0.5482988}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 62525316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -1419.7, y: -6.3}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: -4.67, y: 3.94}
+--- !u!114 &2146315101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146315099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 3fb7c9a9f035f75438e6e4a1760b92f7, type: 3}
+    m_FontSize: 16
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Hint
+
+'
+--- !u!222 &2146315102
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146315099}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2971908892418285929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3217,6 +3864,18 @@ PrefabInstance:
     - target: {fileID: 2779151109824016138, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_Name
       value: InputField (Legacy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562414656143791505, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562414656143791505, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5562414656143791505, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7921704063582215906, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_Pivot.x
