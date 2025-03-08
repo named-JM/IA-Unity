@@ -10,6 +10,6 @@ public class TriviaDisplay : MonoBehaviour
     void Start()
     {
         // Set the trivia text based on what was selected
-        triviaText.text = TriviaManagers.selectedTrivia;
+        
     }
 }

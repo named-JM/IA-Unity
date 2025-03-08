@@ -1,10 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewQuiz", menuName = "Quiz/Create New Quiz")]
+[CreateAssetMenu(fileName = "NewQuiz", menuName = "Quiz/New Quiz")]
 public class QuizData : ScriptableObject
 {
-    public string question;            // The question text
-    public Sprite questionImage;       // Associated image for the question
-    public string[] options;           // Multiple-choice options
-    public int correctAnswerIndex;     // Index of the correct answer (0-based)
+    public string question;
+    public Sprite questionImage;
+    public string[] options;
+    public int correctAnswerIndex;
 }

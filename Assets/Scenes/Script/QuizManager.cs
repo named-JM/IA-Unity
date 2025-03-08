@@ -44,16 +44,28 @@ public class QuizManager : MonoBehaviour
 
     private void LoadQuiz()
     {
+        if (quizzes == null || quizzes.Length == 0)
+        {
+            Debug.LogError("Quizzes array is empty or null!");
+            return;
+        }
+
         if (currentQuizIndex >= quizzes.Length)
         {
             ShowResult();
             return;
         }
 
-        isQuizActive = true;
-        timer = timerDuration; // Use the editable timer duration here
+        Debug.Log($"Loading Quiz {currentQuizIndex}");
 
         QuizData quiz = quizzes[currentQuizIndex];
+
+        if (quiz == null)
+        {
+            Debug.LogError($"Quiz at index {currentQuizIndex} is null!");
+            return;
+        }
+
         questionText.text = quiz.question;
         questionImage.sprite = quiz.questionImage;
 
@@ -63,7 +75,7 @@ public class QuizManager : MonoBehaviour
             {
                 optionButtons[i].gameObject.SetActive(true);
                 optionButtons[i].GetComponentInChildren<Text>().text = quiz.options[i];
-                int index = i; // Avoid closure issue
+                int index = i;
                 optionButtons[i].onClick.RemoveAllListeners();
                 optionButtons[i].onClick.AddListener(() => CheckAnswer(index));
             }

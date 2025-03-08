@@ -4,11 +4,24 @@ using UnityEngine.UI;
 public class DisplayScore : MonoBehaviour
 {
     public Text scoreText;
+    public static DisplayScore instance; // Singleton instance
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        // Retrieve the score from PlayerPrefs
+        UpdateScoreUI();
+    }
+
+    public void UpdateScoreUI()
+    {
         int score = PlayerPrefs.GetInt("PlayerScore", 0);
-        scoreText.text = " " + score.ToString();
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
     }
 }
