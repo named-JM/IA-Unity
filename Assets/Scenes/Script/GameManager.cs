@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -112,17 +113,21 @@ public class GameManager : MonoBehaviour
 
     private void ConfirmHintPurchase()
     {
-        if (score >= 10) // Ensure player has enough points before applying the hint
+        if (score >= 10)
         {
             hintPanel.SetActive(false);
-            ApplyHint();
+            ApplyHint(); // Call ApplyHint() once to reveal a letter
         }
         else
         {
-            Debug.Log("Not enough points to confirm hint!");
+            noHintText.text = "Not enough points to use a hint!";
+            noHintPanel.SetActive(true);
             hintPanel.SetActive(false);
         }
     }
+
+
+
 
     private void CloseHintPanel()
     {
@@ -133,6 +138,51 @@ public class GameManager : MonoBehaviour
         string correctAnswer = currentQuestion.correctWord.Replace(" ", "").ToUpper();
         char[] correctChars = correctAnswer.ToCharArray();
 
+        List<InputField> emptySlots = new List<InputField>();
+        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
+        {
+            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
+            {
+                if (string.IsNullOrEmpty(inputField.text))
+                {
+                    emptySlots.Add(inputField);
+                }
+            }
+        }
+
+        if (emptySlots.Count > 0)
+        {
+            // Pick a random empty slot
+            InputField chosenSlot = emptySlots[Random.Range(0, emptySlots.Count)];
+
+            // Find the correct index of this slot
+            int index = GetSlotIndex(chosenSlot);
+
+            if (index != -1) // Ensure we found the correct index
+            {
+                chosenSlot.text = correctChars[index].ToString();
+                chosenSlot.interactable = false;
+                lockedHintFields.Add(chosenSlot);
+
+                // Disable the corresponding letter button
+                foreach (Button button in letterButtonContainer.GetComponentsInChildren<Button>())
+                {
+                    if (button.GetComponentInChildren<Text>().text == correctChars[index].ToString() && button.interactable)
+                    {
+                        button.interactable = false;
+                        break;
+                    }
+                }
+
+                // Deduct score for using the hint
+                UpdateScore(-10);
+            }
+        }
+    }
+
+    // Helper function to find the index of an input slot in the answer
+    private int GetSlotIndex(InputField slot)
+    {
         List<InputField> allSlots = new List<InputField>();
         foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
         {
@@ -142,29 +192,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < allSlots.Count; i++)
-        {
-            if (string.IsNullOrEmpty(allSlots[i].text))
-            {
-                char correctLetter = correctChars[i];
-                allSlots[i].text = correctLetter.ToString();
-                allSlots[i].interactable = false; // Disable input
-
-                lockedHintFields.Add(allSlots[i]); // Mark this field as locked
-
-                foreach (Button button in letterButtonContainer.GetComponentsInChildren<Button>())
-                {
-                    if (button.GetComponentInChildren<Text>().text == correctLetter.ToString() && button.interactable)
-                    {
-                        button.interactable = false;
-                        break;
-                    }
-                }
-
-                UpdateScore(-10);
-                return;
-            }
-        }
+        return allSlots.IndexOf(slot);
     }
 
     private void CloseNoHintPanel()
@@ -176,51 +204,14 @@ public class GameManager : MonoBehaviour
     {
         if (score < 10)
         {
-            Debug.Log("Not enough points to use a hint!");
             noHintText.text = "Not enough points to use a hint!";
-            noHintPanel.SetActive(true); // Show the warning panel
+            noHintPanel.SetActive(true);
             return;
         }
+
+        // Open hint confirmation panel
         hintPanel.SetActive(true);
         hintText.text = "Use 10 points to reveal a letter?";
-
-        string correctAnswer = currentQuestion.correctWord.Replace(" ", "").ToUpper();
-        char[] correctChars = correctAnswer.ToCharArray();
-
-        List<InputField> allSlots = new List<InputField>();
-        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
-        {
-            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
-            {
-                allSlots.Add(inputField);
-            }
-        }
-
-        for (int i = 0; i < allSlots.Count; i++)
-        {
-            if (string.IsNullOrEmpty(allSlots[i].text))
-            {
-                char correctLetter = correctChars[i];
-                allSlots[i].text = correctLetter.ToString();
-                allSlots[i].interactable = false; // Disable input
-
-                lockedHintFields.Add(allSlots[i]); // Mark this field as locked
-
-                foreach (Button button in letterButtonContainer.GetComponentsInChildren<Button>())
-                {
-                    if (button.GetComponentInChildren<Text>().text == correctLetter.ToString() && button.interactable)
-                    {
-                        button.interactable = false;
-                        break;
-                    }
-                }
-
-                // Deduct score for using a hint
-                UpdateScore(-10);
-
-                return;
-            }
-        }
     }
 
     private QuestionData GetNextQuestion()
@@ -447,9 +438,39 @@ private void SetupSlotsForWord(string word, Transform container)
         else
         {
             PlayAudio(wrongAnswerClip);
+            HighlightIncorrectAnswer(); // Add this function
             ClearAnswerSlots();
         }
     }
+
+    private void HighlightIncorrectAnswer()
+    {
+        PlayAudio(wrongAnswerClip);
+        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
+        {
+            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
+            {
+                inputField.image.color = Color.red; // Change the border color to red
+            }
+        }
+
+        // Reset color after a delay (optional)
+        StartCoroutine(ResetInputFieldColors());
+    }
+    private IEnumerator ResetInputFieldColors()
+    {
+        PlayAudio(wrongAnswerClip);
+        yield return new WaitForSeconds(0.5f); // Wait 1.5 seconds
+
+        foreach (Transform container in new[] { answerSlotContainer1, answerSlotContainer2, answerSlotContainer3 })
+        {
+            foreach (InputField inputField in container.GetComponentsInChildren<InputField>())
+            {
+                inputField.image.color = Color.black; // Reset border color
+            }
+        }
+    }
+
 
     private void PlayAudio(AudioClip clip)
     {

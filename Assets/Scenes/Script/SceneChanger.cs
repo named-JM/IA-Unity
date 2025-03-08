@@ -3,6 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public void GoToMapScene()
+    {
+        SceneManager.LoadScene("Map");
+    }
     // Function to load the LevelSelection scene
     public void GoToLevelSelection()
     {
@@ -28,4 +32,5 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Start");
     }
+   
 }
