@@ -204,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputField (Legacy)
       objectReference: {fileID: 0}
+    - target: {fileID: 6204898362590786948, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7921704063582215906, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1024,6 +1028,7 @@ GameObject:
   - component: {fileID: 470792575}
   - component: {fileID: 470792574}
   - component: {fileID: 470792576}
+  - component: {fileID: 470792577}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -1372,6 +1377,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &470792577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470792573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c969201184398fb45a455510024d64d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &603093278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,7 +1406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &603093279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2101,6 +2118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputField (Legacy)
       objectReference: {fileID: 0}
+    - target: {fileID: 6204898362590786948, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7921704063582215906, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2426,7 +2447,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1030135928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 470792577}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: GoToMainScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1030135928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4022,14 +4055,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3fb7c9a9f035f75438e6e4a1760b92f7, type: 3}
     m_FontSize: 16
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 0
-    m_AlignByGeometry: 0
+    m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -4258,9 +4291,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: efa71b11a9fccb9458dba194b8bf2c5a, type: 3}
-    m_FontSize: 30
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: 3fb7c9a9f035f75438e6e4a1760b92f7, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
@@ -4880,6 +4913,10 @@ PrefabInstance:
     - target: {fileID: 5562414656143791505, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204898362590786948, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7921704063582215906, guid: 313ab22cc1c87534c9f6aef035607428, type: 3}
       propertyPath: m_Pivot.x
